@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Modern minimalist portfolio for a fresh graduate junior developer."
+    />
+    <title>Sydrick B. Parra | Junior Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- This root page mirrors Home.html so the site still works on default index routes. -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a href="Home.html" class="brand mono">PERSONAL PORTFOLIO</a>
+        <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+          <a href="Home.html" class="mono">HOME</a>
+          <a href="About.html" class="mono">ABOUT</a>
+          <a href="Skills.html" class="mono">SKILLS</a>
+          <a href="Projects.html" class="mono">PROJECTS</a>
+          <a href="Education.html" class="mono">EDUCATION</a>
+          <a href="Journey.html" class="mono">JOURNEY</a>
+          <a href="Github.html" class="mono">GITHUB</a>
+          <a href="Contact.html" class="mono">CONTACT</a>
+        </nav>
+        <div class="header-controls">
+          <div class="theme-switcher" role="group" aria-label="Theme switcher">
+            <button class="theme-btn mono" type="button" data-theme="light">
+              LIGHT
+            </button>
+            <button class="theme-btn mono" type="button" data-theme="dark">
+              DARK
+            </button>
+            <button class="theme-btn mono" type="button" data-theme="green">
+              GREEN
+            </button>
+          </div>
+          <button
+            class="menu-toggle mono"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="siteNav"
+            aria-label="Open navigation menu"
+          >
+            MENU
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- SECTION FILE: Home -->
+      <!-- If your name/role/image does not update, check data-bind and .hero-profile selectors in script.js -->
+      <section class="hero section" id="home">
+        <div class="container hero-layout">
+          <div>
+            <figure class="hero-profile reveal">
+              <img
+                src="./assets/profile-placeholder.svg"
+                alt="Profile portrait placeholder"
+              />
+            </figure>
+            <p class="mono overline reveal">HELLO, WORLD.</p>
+            <h1 class="hero-title reveal">
+              I'm <span data-bind="name">YOUR_NAME</span>
+            </h1>
+            <p class="mono role reveal" data-bind="role">
+              Fresh Graduate • Junior Developer
+            </p>
+            <p class="hero-intro reveal">
+              I build clean, functional, and user-focused web experiences with
+              <strong>JavaScript, HTML, CSS, and Python</strong>.
+            </p>
+            <p class="status mono reveal">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span id="typewriterText" aria-live="polite"></span
+              ><span class="cursor" aria-hidden="true"></span>
+            </p>
+            <div class="hero-actions reveal">
+              <a href="Projects.html" class="btn btn-primary mono">VIEW MY WORK</a>
+              <a href="Contact.html" class="btn btn-secondary mono">CONTACT ME</a>
+            </div>
+          </div>
+          <aside class="quick-panel reveal" aria-label="Primary technologies">
+            <h2 class="mono panel-title">CORE STACKS</h2>
+            <ul class="stack-list">
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Python</li>
+            </ul>
+            <a class="btn btn-ghost mono resume-link" href="./assets/SYDRICK_PARRA_RESUME.pdf" download
+              >DOWNLOAD RESUME</a
+            >
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> <span data-bind="name">YOUR_NAME</span></p>
+        <p class="mono">Built with JavaScript, HTML & CSS.</p>
+        <p class="mono">> keep learning. keep building.</p>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="GitHub section of the portfolio." />
+    <title>Sydrick B. Parra | GitHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a href="Home.html" class="brand mono">PERSONAL PORTFOLIO</a>
+        <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+          <a href="Home.html" class="mono">HOME</a>
+          <a href="About.html" class="mono">ABOUT</a>
+          <a href="Skills.html" class="mono">SKILLS</a>
+          <a href="Projects.html" class="mono">PROJECTS</a>
+          <a href="Education.html" class="mono">EDUCATION</a>
+          <a href="Journey.html" class="mono">JOURNEY</a>
+          <a href="Github.html" class="mono">GITHUB</a>
+          <a href="Contact.html" class="mono">CONTACT</a>
+        </nav>
+        <div class="header-controls">
+          <div class="theme-switcher" role="group" aria-label="Theme switcher">
+            <button class="theme-btn mono" type="button" data-theme="light">LIGHT</button>
+            <button class="theme-btn mono" type="button" data-theme="dark">DARK</button>
+            <button class="theme-btn mono" type="button" data-theme="green">GREEN</button>
+          </div>
+          <button class="menu-toggle mono" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation menu">MENU</button>
+        </div>
+      </div>
+    </header>
+    <main id="main-content">
+      <!-- SECTION FILE: GitHub -->
+      <!-- Troubleshooting: this page is static by default; update YOUR_GITHUB links manually -->
+      <section class="section" id="github">
+        <div class="container">
+          <h2 class="section-title mono reveal">GITHUB</h2>
+          <article class="github-card reveal">
+            <p>
+              Connect with me through GitHub!
+            </p>
+            <a class="mono inline-link" href="https://github.com/Sydrick696995" target="_blank" rel="noopener noreferrer">github.com/Sydrick696995</a>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> <span data-bind="name">YOUR_NAME</span></p>
+        <p class="mono">Built with JavaScript, HTML & CSS.</p>
+        <p class="mono">> keep learning. keep building.</p>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

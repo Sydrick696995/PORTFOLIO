@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Profile image placeholder</title>
+  <desc id="desc">A minimalist placeholder portrait for portfolio profile image.</desc>
+  <rect width="240" height="240" fill="#eef1ec" />
+  <circle cx="120" cy="90" r="42" fill="#bcc8bf" />
+  <path d="M44 218c8-42 40-66 76-66s68 24 76 66" fill="#bcc8bf" />
+</svg>
