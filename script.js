@@ -14,7 +14,7 @@ const PORTFOLIO_DATA = {
   skills: [
     {
       title: "JAVASCRIPT",
-      tags: ["ES6+", "DOM Manipulation", "APIs", "Problem Solving"],
+      tags: ["DOM Manipulation", "APIs", "Problem Solving"],
     },
     {
       title: "HTML",
