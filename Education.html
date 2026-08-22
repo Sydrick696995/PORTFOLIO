@@ -60,9 +60,27 @@
         </div>
       </section>
     </main>
+      <dialog class="certificate-viewer" id="certificateViewer" aria-labelledby="certificateViewerTitle">
+        <div class="certificate-viewer-panel">
+          <div class="certificate-viewer-header">
+            <div>
+              <p class="mono certificate-viewer-label">CERTIFICATE VIEWER</p>
+              <h2 id="certificateViewerTitle">Certificate</h2>
+            </div>
+            <button class="menu-toggle mono" id="certificateViewerClose" type="button" aria-label="Close certificate viewer">CLOSE</button>
+          </div>
+          <div class="certificate-viewer-body">
+            <img id="certificateViewerImage" src="./assets/Github-Foundation.jpg" alt="Certificate preview" />
+          </div>
+          <div class="certificate-viewer-footer">
+            <a id="certificateViewerPdf" class="btn btn-primary mono" href="#" target="_blank" rel="noopener noreferrer">OPEN PDF</a>
+            <a id="certificateViewerVerification" class="btn btn-secondary mono inline-link" href="#" target="_blank" rel="noopener noreferrer" hidden>VERIFY ON DATACAMP</a>
+          </div>
+        </div>
+      </dialog>
     <footer class="site-footer">
       <div class="container footer-wrap">
-        <p>© <span id="year"></span> <span data-bind="name">YOUR_NAME</span></p>
+        <p>© <span id="year"></span> <span data-bind="name">Sydrick B. Parra</span></p>
         <p class="mono">Built with JavaScript, HTML & CSS.</p>
         <p class="mono">> keep learning. keep building.</p>
       </div>

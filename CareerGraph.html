@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CareerGraph case study by Sydrick B. Parra: a graph database career exploration application using CognoDB and Cypher." />
+    <title>Sydrick B. Parra | CareerGraph Case Study</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a href="Home.html" class="brand mono">PERSONAL PORTFOLIO</a>
+        <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
+          <a href="Home.html" class="mono">HOME</a>
+          <a href="About.html" class="mono">ABOUT</a>
+          <a href="Skills.html" class="mono">SKILLS</a>
+          <a href="Projects.html" class="mono">PROJECTS</a>
+          <a href="Education.html" class="mono">EDUCATION</a>
+          <a href="Journey.html" class="mono">JOURNEY</a>
+          <a href="Contact.html" class="mono">CONTACT</a>
+        </nav>
+        <div class="nav-actions">
+          <div class="theme-switcher" aria-label="Color theme">
+            <button class="theme-btn mono" type="button" data-theme="light" aria-pressed="false">LIGHT</button>
+            <button class="theme-btn mono" type="button" data-theme="dark" aria-pressed="false">DARK</button>
+            <button class="theme-btn mono" type="button" data-theme="green" aria-pressed="false">GREEN</button>
+          </div>
+          <button class="menu-toggle mono" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation menu">MENU</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section case-study-hero">
+        <div class="container narrow">
+          <p class="mono overline reveal">FEATURED PROJECT / CASE STUDY</p>
+          <h1 class="hero-title reveal">CareerGraph</h1>
+          <p class="role mono reveal">Graph Database Career Exploration Platform</p>
+          <p class="hero-intro reveal">
+            A hosted web application that helps users explore career paths by connecting
+            starting skills, target roles, required skills, projects, and learning resources
+            through a graph database.
+          </p>
+          <div class="hero-actions reveal">
+            <a class="btn btn-primary mono" href="https://careergraph-ehpd.onrender.com" target="_blank" rel="noopener noreferrer">LIVE DEMO</a>
+            <a class="btn btn-secondary mono" href="https://youtu.be/HYSheIQ38fI" target="_blank" rel="noopener noreferrer">WATCH VIDEO</a>
+            <a class="btn btn-ghost mono" href="Projects.html">BACK TO PROJECTS</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container case-study-grid">
+          <article class="case-study-block reveal">
+            <p class="mono overline">01 / PROBLEM</p>
+            <h2 class="section-title mono">Why a graph?</h2>
+            <p>
+              Career planning is naturally connected: one skill can support several roles,
+              roles require multiple skills, projects can demonstrate those skills, and
+              resources can teach them. A graph model represents those relationships directly
+              instead of flattening them into unrelated lists.
+            </p>
+          </article>
+          <article class="case-study-block reveal">
+            <p class="mono overline">02 / MODEL</p>
+            <h2 class="section-title mono">Connected data</h2>
+            <pre class="graph-model" aria-label="CareerGraph data model">Skill ──RELEVANT_TO──&gt; Role
+Role ──REQUIRES──&gt; Skill
+Project ──DEMONSTRATES──&gt; Skill
+Resource ──TEACHES──&gt; Skill
+
+Starting Skill
+      │
+      ▼
+  Skill Graph ─────► Target Role
+      │                    │
+      ▼                    ▼
+  Projects             Resources</pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <p class="mono overline reveal">03 / IMPLEMENTATION</p>
+          <h2 class="section-title mono reveal">What I built</h2>
+          <div class="case-study-cards">
+            <article class="case-study-block reveal"><h3>Multi-hop reasoning</h3><p>Cypher traversals connect multiple graph entities to produce career paths and recommendations.</p></article>
+            <article class="case-study-block reveal"><h3>Parameterized queries</h3><p>Database operations use the official Neo4j driver with parameters instead of concatenated Cypher.</p></article>
+            <article class="case-study-block reveal"><h3>Reliable UX</h3><p>Loading, empty, validation, and database-error states help users understand what the application is doing.</p></article>
+            <article class="case-study-block reveal"><h3>Interactive visualization</h3><p>The visualization reflects nodes and relationships returned for the selected career exploration.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container narrow">
+          <p class="mono overline reveal">04 / STACK</p>
+          <div class="chip-list reveal" aria-label="CareerGraph technologies">
+            <span>Python</span><span>Flask</span><span>CognoDB</span><span>Cypher</span><span>JavaScript</span><span>HTML</span><span>CSS</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> Sydrick B. Parra</p>
+        <p class="mono">Built with JavaScript, HTML & CSS.</p>
+        <p class="mono">> keep learning. keep building.</p>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>

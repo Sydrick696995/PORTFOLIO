@@ -1,62 +1,82 @@
+// Portfolio content lives in one structured object so project and profile
+// updates do not require duplicating the same copy across multiple pages.
 const PORTFOLIO_DATA = {
   personal: {
     name: "Sydrick B. Parra",
-    role: "Fresh Graduate • Junior Developer",
+    role: "Junior Software Developer • Web, Data & AI",
     statusText: "> open to work",
     profileImage: "./assets/IMG_1575.JPG",
     profileAlt: "Portrait of Sydrick B. Parra",
   },
   about: [
-    "Fresh Bachelor of Science in Computer Science graduate highly motivated and passionate about web development, applications, and systems with database integration.",
-    "Possesses strong teamwork, fast learning, and time management skills, with the ability to work in fast-paced environments while maintaining professionalism and quality.",
-    "Currently seeking opportunities to grow as a developer, contribute to real-world projects, and continue learning modern web technologies.",
+    "Computer Science graduate focused on building practical web applications, data-driven systems, and intelligent software with clear, user-focused interfaces.",
+    "My projects span graph databases, machine learning, data modeling, applied cryptography, and responsive web development — with an emphasis on turning technical requirements into usable systems.",
+    "I am looking for junior software development opportunities where I can contribute to real products, learn from experienced engineers, and keep improving as a builder.",
   ],
   skills: [
     {
-      title: "JAVASCRIPT",
-      tags: ["DOM Manipulation", "APIs", "Problem Solving"],
+      title: "WEB DEVELOPMENT",
+      tags: ["JavaScript", "HTML", "CSS", "Responsive UI", "Accessibility"],
     },
     {
-      title: "HTML",
-      tags: ["Semantic HTML", "Forms", "Accessibility Basics", "SEO Basics"],
+      title: "PYTHON & BACKEND",
+      tags: ["Python", "Flask", "REST APIs", "Scripting", "API Integration"],
     },
     {
-      title: "CSS",
-      tags: ["Responsive Design", "Flexbox", "Grid", "Animations"],
+      title: "DATABASES & DATA",
+      tags: ["SQL", "CognoDB", "Cypher", "Database Design", "Pandas", "NumPy"],
     },
     {
-      title: "PYTHON",
-      tags: ["Fundamentals", "Scripting", "Basic Automation", "API Basics"],
+      title: "AI / MACHINE LEARNING",
+      tags: ["YOLOv8", "Pose Estimation", "scikit-learn", "Data Testing", "Model Evaluation"],
     },
     {
-      title: "SQL & PHP",
-      tags: ["Database Design", "Backend Development", "Query Optimization", "CRUD Operations"],
+      title: "TOOLS & ENGINEERING",
+      tags: ["Git", "GitHub", "Streamlit", "Testing", "Debugging", "Documentation"],
     },
   ],
-  optionalSkills: [
-    "React",
-    "TypeScript",
-    "Node.js",
-    "Git/GitHub",
-    "REST APIs",
-    "Tailwind CSS",
-    "YOLOv8",
-    "Pose Estimation",
-    "Machine Learning",
-  ],
+  optionalSkills: [],
   featuredProject: {
-    name: "C.A.L.I.: Real-Time Calisthenics Form Checker",
+    name: "CareerGraph: Graph Database Career Exploration Platform",
     summary:
-      "A real-time calisthenics form-checking system using YOLOv8 and Pose Estimation. As Backend Developer and Data Tester, designed and implemented machine learning workflows for human pose detection and form deviation classification.",
-    technologies: ["Python", "YOLOv8", "Pose Estimation", "Machine Learning"],
+      "A hosted career exploration application that uses CognoDB and Cypher to connect starting skills, target roles, required skills, projects, and learning resources. Multi-hop graph traversal powers career paths and recommendations rather than relying on flat lists.",
+    technologies: ["Python", "Flask", "CognoDB", "Cypher", "JavaScript"],
+    highlights: [
+      "Multi-hop career-path reasoning across connected graph entities",
+      "Skill, project, and learning-resource recommendations",
+      "Interactive graph visualization of returned nodes and relationships",
+      "Parameterized Cypher queries with graceful database error handling",
+    ],
     links: [
-      { label: "GITHUB", href: "https://github.com/Sydrick696995" },
-      { label: "LIVE DEMO", href: "#" },
+      { label: "LIVE DEMO", href: "https://careergraph-ehpd.onrender.com" },
+      { label: "VIDEO", href: "https://youtu.be/HYSheIQ38fI" },
+      { label: "CASE STUDY", href: "./CareerGraph.html", internal: true },
+      { label: "GITHUB PROFILE", href: "https://github.com/Sydrick696995" },
     ],
   },
   projects: [
     {
+      name: "CareerGraph: Graph Database Career Exploration Platform",
+      categories: ["Web", "Data"],
+      description:
+        "A career exploration web application that models relationships between skills, roles, projects, and learning resources as a graph and uses multi-hop Cypher queries to generate connected recommendations.",
+      problemSolved:
+        "Helps users move from a starting skill toward a target role by showing the skills to build, projects that can demonstrate those skills, and resources that can support learning.",
+      technologies: ["Python", "Flask", "CognoDB", "Cypher", "JavaScript", "HTML", "CSS"],
+      features: [
+        "Multi-hop career-path traversal across skills and roles",
+        "Starting-skill and target-role autocomplete",
+        "Project coverage and learning-resource recommendations",
+        "Interactive graph visualization based on the selected career path",
+        "Centralized API error handling, timeouts, validation, and tests",
+      ],
+      github: "https://github.com/Sydrick696995",
+      demo: "https://careergraph-ehpd.onrender.com",
+      demoLabel: "LIVE DEMO",
+    },
+    {
       name: "C.A.L.I.: Real-Time Calisthenics Form Checker",
+      categories: ["AI", "Python"],
       description:
         "A real-time calisthenics form-checking system using YOLOv8 and Pose Estimation for human pose detection and form deviation classification.",
       problemSolved:
@@ -75,10 +95,12 @@ const PORTFOLIO_DATA = {
         "Data testing and model validation",
       ],
       github: "https://github.com/Sydrick696995",
-      demo: "#",
+      demo: null,
+      demoNote: "No public live demo is currently listed for this project.",
     },
     {
       name: "Synthetic Data Modeling & Simulation",
+      categories: ["Data", "Python"],
       description:
         "A full-stack Python project for exploring synthetic data generation, exploratory data analysis, regression modeling, and simulation in one workflow.",
       problemSolved:
@@ -104,6 +126,7 @@ const PORTFOLIO_DATA = {
     },
     {
       name: "Applied Cryptography Application",
+      categories: ["Security", "Python"],
       description:
         "A Streamlit-based security-focused application demonstrating practical use of symmetric encryption, asymmetric encryption, and hashing for text and files.",
       problemSolved:
@@ -121,6 +144,7 @@ const PORTFOLIO_DATA = {
     },
     {
       name: "APAW System Enhancement (OJT)",
+      categories: ["Web", "Backend"],
       description:
         "Institutional system enhancement work completed during OJT at CSPC AIRCoDE, focused on usability, mobile responsiveness, and operational support.",
       problemSolved:
@@ -139,6 +163,7 @@ const PORTFOLIO_DATA = {
     },
     {
       name: "Portfolio Website",
+      categories: ["Web", "UI/UX"],
       description:
         "Modern minimalist portfolio website built with vanilla JavaScript, HTML, and CSS featuring multi-theme support, scroll animations, and responsive design.",
       problemSolved:
@@ -195,6 +220,53 @@ const PORTFOLIO_DATA = {
   ],
   certificates: [
     {
+      title: "GitHub Foundations",
+      issuer: "DataCamp",
+      date: "Aug 22, 2026",
+      image: "./assets/Github-Foundation.jpg",
+      pdf: "./assets/Github-Foundation.pdf",
+      // Official DataCamp Statement of Accomplishment used for recruiter verification.
+      verificationUrl: "https://www.datacamp.com/completed/statement-of-accomplishment/track/0ed13facd8342a5d23b1d1f2cdda19d4a3d7e1e0?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=soa",
+      duration: "9 hours",
+      description: "Completed GitHub Foundations, strengthening practical knowledge of GitHub workflows, collaboration, and repository-based development.",
+    },
+    {
+      title: "Intermediate GitHub Concepts",
+      issuer: "DataCamp",
+      date: "Aug 22, 2026",
+      image: "./assets/Intermediate-Github-Concepts.jpg",
+      pdf: "./assets/Intermediate-Github-Concepts.pdf",
+      duration: "3 hours",
+      description: "Completed Intermediate GitHub Concepts with deeper coverage of GitHub features and collaborative development practices.",
+    },
+    {
+      title: "Introduction to GitHub Concepts",
+      issuer: "DataCamp",
+      date: "Aug 21, 2026",
+      image: "./assets/Introduction-to-Github-Concepts.jpg",
+      pdf: "./assets/Introduction-to-Github-Concepts.pdf",
+      duration: "2 hours",
+      description: "Completed an introductory course covering core GitHub concepts and workflows.",
+    },
+    {
+      title: "Intermediate Git",
+      issuer: "DataCamp",
+      date: "Aug 18, 2026",
+      image: "./assets/Intermediate-Git.jpg",
+      pdf: "./assets/Intermediate-Git.pdf",
+      duration: "2 hours",
+      description: "Completed Intermediate Git, building practical command-line version-control skills beyond the fundamentals.",
+    },
+    {
+      title: "Introduction to Git",
+      issuer: "DataCamp",
+      date: "Aug 18, 2026",
+      image: "./assets/Introduction-to-Git.jpg",
+      pdf: "./assets/Introduction-to-Git.pdf",
+      duration: "2 hours",
+      description: "Completed an introductory Git course covering core version-control concepts and workflows.",
+    },
+    {
       title: "11th Bicol Youth Congress in Information Technology",
       issuer: "BYCIT",
       date: "2026",
@@ -203,20 +275,11 @@ const PORTFOLIO_DATA = {
       link: "https://lnkd.in/p/gjzW29nn",
     },
     {
-      title: "11th Bicol Youth Congress in Information Technology (Certificate 2)",
-      issuer: "BYCIT",
-      date: "2026",
-      image: "./assets/BYCIT2.jpg",
-      description: "Additional certificate from the 11th Bicol Youth Congress in Information Technology.",
-      link: "https://lnkd.in/p/gjzW29nn",
-    },
-    {
       title: "Junior Philippine Computer Society - CSPC Chapter",
       issuer: "JPCS",
       date: "2025 — 2026",
       image: "./assets/JPCS_Certificate.jpg",
       description: "Active member certificate for Junior Philippine Computer Society - CSPC Chapter (2025-2026).",
-      link: "#",
     },
     {
       title: "Introduction to Cybersecurity",
@@ -224,16 +287,10 @@ const PORTFOLIO_DATA = {
       date: "2025",
       image: "./assets/Introduction_to_Cybersecurity_certificate.jpg",
       description: "Completed Introduction to Cybersecurity course covering fundamental cybersecurity concepts, threats, and best practices.",
-      link: "#",
     },
   ],
 };
 
-const OPTIONAL_FEATURES = {
-  commandPalette: false,
-  terminalMode: false,
-  projectFilter: false,
-};
 
 const THEME_STORAGE_KEY = "portfolio-theme";
 const SUPPORTED_THEMES = ["light", "dark", "green"];
@@ -256,7 +313,7 @@ function setBasicTextBindings() {
     profileImage.alt = PORTFOLIO_DATA.personal.profileAlt;
   }
 
-  document.title = `${PORTFOLIO_DATA.personal.name} | Junior Developer Portfolio`;
+  document.title = `${PORTFOLIO_DATA.personal.name} | Junior Software Developer Portfolio`;
 }
 
 function renderAbout() {
@@ -292,12 +349,22 @@ function renderSkills() {
   });
 }
 
+function escapeHTML(value) {
+  const div = document.createElement("div");
+  div.textContent = String(value ?? "");
+  return div.innerHTML;
+}
+
 function linkButton(link, extraClass = "btn btn-secondary mono") {
-  return `<a class="${extraClass}" href="${link.href}" target="_blank" rel="noopener noreferrer">${link.label}</a>`;
+  return link.internal
+    ? `<a class="${extraClass}" href="${link.href}">${link.label}</a>`
+    : `<a class="${extraClass}" href="${link.href}" target="_blank" rel="noopener noreferrer">${link.label}</a>`;
 }
 
 function projectActionOrNote(url, label, note) {
-  if (url) {
+  // Treat placeholder links such as "#" as unavailable instead of sending
+  // visitors back to the top of the current page.
+  if (url && url !== "#") {
     return `<a class="btn btn-secondary mono" href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
   }
 
@@ -311,47 +378,111 @@ function renderProjects() {
   const featuredTech = document.getElementById("featuredProjectTech");
   const featuredLinks = document.getElementById("featuredProjectLinks");
   const projectsGrid = document.getElementById("projectsGrid");
-
-  if (
-    !featuredName ||
-    !featuredSummary ||
-    !featuredTech ||
-    !featuredLinks ||
-    !projectsGrid
-  ) {
-    return;
-  }
+  if (!featuredName || !featuredSummary || !featuredTech || !featuredLinks || !projectsGrid) return;
 
   const fp = PORTFOLIO_DATA.featuredProject;
   featuredName.textContent = fp.name;
   featuredSummary.textContent = fp.summary;
   featuredTech.textContent = fp.technologies.join(" / ");
-  featuredLinks.innerHTML = fp.links
-    .map((link) => linkButton(link, "btn btn-secondary mono"))
-    .join("");
+  featuredLinks.innerHTML = fp.links.map((link) => linkButton(link, "btn btn-secondary mono")).join("");
 
-  PORTFOLIO_DATA.projects.forEach((project, index) => {
-    const card = document.createElement("article");
-    card.className = "project-card reveal";
-    card.innerHTML = `
-      <p class="project-index mono">${String(index + 1).padStart(2, "0")} / PROJECT</p>
-      <h3 class="project-title">${project.name}</h3>
-      <p class="project-desc">${project.description}</p>
-      <p class="meta-label mono">Problem Solved</p>
-      <p>${project.problemSolved}</p>
-      <p class="meta-label mono">Built with</p>
-      <p>${project.technologies.join(" • ")}</p>
-      <p class="meta-label mono">Key Features</p>
-      <ul class="project-list">${project.features
-        .map((feature) => `<li>${feature}</li>`)
-        .join("")}</ul>
-      <div class="project-actions">
-        ${projectActionOrNote(project.github, "GITHUB", project.githubNote)}
-        ${projectActionOrNote(project.demo, "LIVE DEMO", project.demoNote)}
-      </div>
-    `;
-    projectsGrid.appendChild(card);
+  const featuredCard = document.querySelector(".featured-project");
+  if (featuredCard && fp.highlights?.length) {
+    let highlights = featuredCard.querySelector(".featured-highlights");
+    if (!highlights) {
+      highlights = document.createElement("ul");
+      highlights.className = "featured-highlights project-list";
+      featuredCard.querySelector(".project-actions")?.before(highlights);
+    }
+    highlights.innerHTML = fp.highlights.map((item) => `<li>${escapeHTML(item)}</li>`).join("");
+  }
+
+  const render = (filter = "ALL", query = "") => {
+    projectsGrid.innerHTML = "";
+    const normalizedQuery = query.trim().toLowerCase();
+    const visibleProjects = PORTFOLIO_DATA.projects.filter((project) => {
+      const categoryMatch = filter === "ALL" || (project.categories || []).includes(filter);
+      const searchable = [
+        project.name,
+        project.description,
+        project.problemSolved,
+        ...(project.technologies || []),
+        ...(project.features || []),
+        ...(project.categories || []),
+      ].join(" ").toLowerCase();
+      return categoryMatch && (!normalizedQuery || searchable.includes(normalizedQuery));
+    });
+
+    const count = document.getElementById("projectResultCount");
+    if (count) {
+      count.textContent = `${visibleProjects.length} project${visibleProjects.length === 1 ? "" : "s"} shown`;
+    }
+
+    if (!visibleProjects.length) {
+      projectsGrid.innerHTML = `
+        <div class="empty-state">
+          <p class="mono">NO MATCHING PROJECTS</p>
+          <p>Try another keyword or clear the filter.</p>
+          <button class="btn btn-secondary mono" type="button" data-clear-projects>CLEAR FILTER</button>
+        </div>`;
+      projectsGrid.querySelector("[data-clear-projects]")?.addEventListener("click", () => {
+        const search = document.getElementById("projectSearch");
+        if (search) search.value = "";
+        document.querySelectorAll(".project-filter").forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.filter === "ALL");
+          button.setAttribute("aria-pressed", String(button.dataset.filter === "ALL"));
+        });
+        render();
+      });
+      return;
+    }
+
+    visibleProjects.forEach((project, index) => {
+      const card = document.createElement("article");
+      card.className = "project-card reveal is-visible";
+      card.innerHTML = `
+        <div class="project-card-top">
+          <p class="project-index mono">${String(index + 1).padStart(2, "0")} / PROJECT</p>
+          <span class="project-category mono">${escapeHTML((project.categories || ["PROJECT"])[0])}</span>
+        </div>
+        <h3 class="project-title">${escapeHTML(project.name)}</h3>
+        <p class="project-desc">${escapeHTML(project.description)}</p>
+        <div class="project-tags">${(project.technologies || []).slice(0, 5).map((tech) => `<span>${escapeHTML(tech)}</span>`).join("")}</div>
+        <details class="project-details">
+          <summary class="mono">VIEW DETAILS</summary>
+          <div class="project-detail-body">
+            <p class="meta-label mono">Problem Solved</p>
+            <p>${escapeHTML(project.problemSolved)}</p>
+            <p class="meta-label mono">Key Features</p>
+            <ul class="project-list">${project.features.map((feature) => `<li>${escapeHTML(feature)}</li>`).join("")}</ul>
+          </div>
+        </details>
+        <div class="project-actions">
+          ${projectActionOrNote(project.github, "GITHUB", project.githubNote)}
+          ${projectActionOrNote(project.demo, "LIVE DEMO", project.demoNote)}
+        </div>
+      `;
+      projectsGrid.appendChild(card);
+    });
+  };
+
+  const search = document.getElementById("projectSearch");
+  const filters = document.querySelectorAll(".project-filter");
+  filters.forEach((button) => {
+    button.addEventListener("click", () => {
+      filters.forEach((item) => {
+        const active = item === button;
+        item.classList.toggle("is-active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+      render(button.dataset.filter || "ALL", search?.value || "");
+    });
   });
+  search?.addEventListener("input", () => {
+    const active = document.querySelector(".project-filter.is-active");
+    render(active?.dataset.filter || "ALL", search.value);
+  });
+  render();
 }
 
 function renderEducation() {
@@ -392,21 +523,84 @@ function renderCertificates() {
   const container = document.getElementById("certificatesGrid");
   if (!container) return;
 
-  PORTFOLIO_DATA.certificates.forEach((cert) => {
+  // Each credential stays independently visible and verifiable. DataCamp
+  // certificates include their original PDFs in /assets so visitors can open
+  // the issued document instead of relying only on a thumbnail.
+  PORTFOLIO_DATA.certificates.forEach((cert, index) => {
     const card = document.createElement("article");
     card.className = "certificate-card reveal";
     card.innerHTML = `
-      <div class="certificate-image">
-        <img src="${cert.image}" alt="${cert.title} certificate" loading="lazy" />
-      </div>
+      <button class="certificate-image certificate-view-button" type="button"
+        data-certificate-index="${index}" aria-label="Open ${escapeHTML(cert.title)} certificate">
+        <img src="${escapeHTML(cert.image)}" alt="${escapeHTML(cert.title)} certificate" loading="lazy" />
+        <span class="certificate-view-label mono">VIEW</span>
+      </button>
       <div class="certificate-content">
-        <h3 class="certificate-title">${cert.title}</h3>
-        <p class="certificate-meta mono">${cert.issuer} • ${cert.date}</p>
-        <p class="certificate-desc">${cert.description}</p>
-        ${cert.link && cert.link !== "#" ? `<a class="btn btn-secondary mono inline-link" href="${cert.link}" target="_blank" rel="noopener noreferrer">VIEW CERTIFICATE</a>` : ""}
+        <div class="certificate-kicker mono">${escapeHTML(cert.issuer)}</div>
+        <h3 class="certificate-title">${escapeHTML(cert.title)}</h3>
+        <p class="certificate-meta mono">${escapeHTML(cert.date)}${cert.duration ? ` • ${escapeHTML(cert.duration)}` : ""}</p>
+        <p class="certificate-desc">${escapeHTML(cert.description)}</p>
+        <div class="certificate-actions">
+          <button class="btn btn-secondary mono certificate-open-button" type="button" data-certificate-index="${index}">VIEW CERTIFICATE</button>
+          ${cert.pdf ? `<a class="btn btn-secondary mono inline-link" href="${escapeHTML(cert.pdf)}" target="_blank" rel="noopener noreferrer">OPEN PDF</a>` : ""}
+          ${cert.verificationUrl ? `<a class="btn btn-secondary mono inline-link" href="${escapeHTML(cert.verificationUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Verify ${escapeHTML(cert.title)} on DataCamp">VERIFY</a>` : ""}
+          ${cert.link ? `<a class="btn btn-secondary mono inline-link" href="${escapeHTML(cert.link)}" target="_blank" rel="noopener noreferrer">VERIFY</a>` : ""}
+        </div>
       </div>
     `;
     container.appendChild(card);
+  });
+
+  container.querySelectorAll("[data-certificate-index]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const certificate = PORTFOLIO_DATA.certificates[Number(button.dataset.certificateIndex)];
+      openCertificateViewer(certificate);
+    });
+  });
+}
+
+function openCertificateViewer(cert) {
+  const dialog = document.getElementById("certificateViewer");
+  const image = document.getElementById("certificateViewerImage");
+  const title = document.getElementById("certificateViewerTitle");
+  const pdfLink = document.getElementById("certificateViewerPdf");
+  const verificationLink = document.getElementById("certificateViewerVerification");
+  if (!dialog || !image || !title) return;
+
+  title.textContent = `${cert.title} — ${cert.issuer}`;
+  image.src = cert.image;
+  image.alt = `${cert.title} certificate`;
+  if (pdfLink) {
+    pdfLink.hidden = !cert.pdf;
+    if (cert.pdf) pdfLink.href = cert.pdf;
+  }
+
+  // Only show an external verification action when the credential has an
+  // official verification URL. This prevents fake or placeholder links.
+  if (verificationLink) {
+    verificationLink.hidden = !cert.verificationUrl;
+    if (cert.verificationUrl) verificationLink.href = cert.verificationUrl;
+  }
+
+  if (typeof dialog.showModal === "function") dialog.showModal();
+  else dialog.setAttribute("open", "");
+}
+
+function initCertificateViewer() {
+  const dialog = document.getElementById("certificateViewer");
+  const close = document.getElementById("certificateViewerClose");
+  if (!dialog || !close) return;
+
+  close.addEventListener("click", () => {
+    if (typeof dialog.close === "function") dialog.close();
+    else dialog.removeAttribute("open");
+  });
+
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) {
+      if (typeof dialog.close === "function") dialog.close();
+      else dialog.removeAttribute("open");
+    }
   });
 }
 
@@ -643,16 +837,43 @@ function initContactForm() {
   });
 }
 
-function initOptionalFeatures() {
-  if (OPTIONAL_FEATURES.commandPalette) {
-    console.info("Command palette is enabled. Wire up CMD/CTRL + K actions.");
-  }
-  if (OPTIONAL_FEATURES.terminalMode) {
-    console.info("Terminal mode is enabled. Add your optional easter egg.");
-  }
-  if (OPTIONAL_FEATURES.projectFilter) {
-    console.info("Project filter is enabled. Add filtering controls and logic.");
-  }
+
+function initPageChrome() {
+  // Small, site-wide interaction layer: reading progress and a back-to-top
+  // control. Both are intentionally lightweight and disappear when motion is
+  // reduced, so they never become the focus of the portfolio.
+  const topButton = document.createElement("button");
+  topButton.type = "button";
+  topButton.className = "back-to-top mono";
+  topButton.setAttribute("aria-label", "Back to top");
+  topButton.textContent = "↑";
+  document.body.appendChild(topButton);
+
+  const updateScrollUI = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
+    document.documentElement.style.setProperty("--scroll-progress", String(progress));
+
+    topButton.classList.toggle("is-visible", window.scrollY > 520);
+    document.querySelector(".site-header")?.classList.toggle("is-scrolled", window.scrollY > 8);
+  };
+
+  topButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("scroll", updateScrollUI, { passive: true });
+  updateScrollUI();
+}
+
+function initExternalLinks() {
+  // Keep external links safe when the portfolio is opened from another site.
+  document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+    const rel = new Set((link.getAttribute("rel") || "").split(/\s+/).filter(Boolean));
+    rel.add("noopener");
+    rel.add("noreferrer");
+    link.setAttribute("rel", [...rel].join(" "));
+  });
 }
 
 function initFooterYear() {
@@ -675,7 +896,9 @@ function initPortfolio() {
   initNavSectionIndicator();
   initThemeSwitcher();
   initContactForm();
-  initOptionalFeatures();
+  initCertificateViewer();
+  initPageChrome();
+  initExternalLinks();
   initFooterYear();
 }
 

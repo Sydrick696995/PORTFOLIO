@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Projects section of the portfolio." />
+    <meta name="description" content="Selected software projects by Sydrick B. Parra, including CareerGraph, C.A.L.I., and data applications." />
     <title>Sydrick B. Parra | Projects</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -52,13 +52,27 @@
             <p id="featuredProjectTech" class="tech-line"></p>
             <div class="project-actions" id="featuredProjectLinks"></div>
           </article>
+          <div class="project-explorer reveal" aria-label="Project filters">
+            <div class="project-search-wrap">
+              <label class="mono" for="projectSearch">FIND A PROJECT</label>
+              <input id="projectSearch" type="search" placeholder="Search by technology, project, or topic" autocomplete="off" />
+            </div>
+            <div class="project-filter-row" role="group" aria-label="Filter projects by category">
+              <button class="project-filter is-active mono" type="button" data-filter="ALL" aria-pressed="true">ALL</button>
+              <button class="project-filter mono" type="button" data-filter="Web" aria-pressed="false">WEB</button>
+              <button class="project-filter mono" type="button" data-filter="Data" aria-pressed="false">DATA</button>
+              <button class="project-filter mono" type="button" data-filter="AI" aria-pressed="false">AI</button>
+              <button class="project-filter mono" type="button" data-filter="Security" aria-pressed="false">SECURITY</button>
+            </div>
+            <p id="projectResultCount" class="project-result-count mono" aria-live="polite"></p>
+          </div>
           <div class="projects-grid" id="projectsGrid"></div>
         </div>
       </section>
     </main>
     <footer class="site-footer">
       <div class="container footer-wrap">
-        <p>© <span id="year"></span> <span data-bind="name">YOUR_NAME</span></p>
+        <p>© <span id="year"></span> <span data-bind="name">Sydrick B. Parra</span></p>
         <p class="mono">Built with JavaScript, HTML & CSS.</p>
         <p class="mono">> keep learning. keep building.</p>
       </div>

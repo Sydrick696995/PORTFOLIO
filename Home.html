@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Modern minimalist portfolio for a fresh graduate junior developer."
+      content="Portfolio of Sydrick B. Parra, a junior software developer focused on web applications, data systems, and AI."
     />
     <title>Sydrick B. Parra | Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -55,11 +55,12 @@
               <img src="./assets/profile-placeholder.svg" alt="Profile portrait placeholder" />
             </figure>
             <p class="mono overline reveal">HELLO, WORLD.</p>
-            <h1 class="hero-title reveal">I'm <span data-bind="name">YOUR_NAME</span></h1>
-            <p class="mono role reveal" data-bind="role">Fresh Graduate • Junior Developer</p>
+            <h1 class="hero-title reveal">I'm <span data-bind="name">Sydrick B. Parra</span></h1>
+            <p class="mono role reveal" data-bind="role">Junior Software Developer • Web, Data & AI</p>
             <p class="hero-intro reveal">
-              I build clean, functional, and user-focused web experiences with
-              <strong>JavaScript, HTML, CSS, and Python</strong>.
+              I build practical software at the intersection of
+              <strong>web development, data systems, and AI</strong> — from responsive interfaces
+              to database-backed applications.
             </p>
             <p class="status mono reveal">
               <span class="status-dot" aria-hidden="true"></span>
@@ -74,20 +75,52 @@
             <h2 class="mono panel-title">CORE STACKS</h2>
             <ul class="stack-list">
               <li>JavaScript</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Python</li>
-              <li>Database</li>
+              <li>Python / Flask</li>
+              <li>CognoDB / Cypher</li>
+              <li>HTML / CSS</li>
+              <li>AI / Data</li>
             </ul>
             <a class="btn btn-ghost mono resume-link" href="./assets/SYDRICK_PARRA_RESUME.pdf" download>DOWNLOAD RESUME</a>
           </aside>
+        </div>
+      </section>
+
+      <!-- Featured work is intentionally visible on the landing page so a recruiter
+           can reach the strongest technical project without navigating first. -->
+      <section class="section featured-home" aria-labelledby="featured-home-title">
+        <div class="container">
+          <div class="section-heading-row reveal">
+            <div>
+              <p class="mono overline">01 / FEATURED</p>
+              <h2 class="section-title mono" id="featured-home-title">CAREERGRAPH</h2>
+            </div>
+            <a class="btn btn-ghost mono" href="Projects.html">VIEW ALL PROJECTS</a>
+          </div>
+          <article class="home-feature-card reveal">
+            <div>
+              <p class="mono feature-label">GRAPH DATABASE CAREER EXPLORATION</p>
+              <h3>Connecting skills, roles, projects, and learning resources.</h3>
+              <p>
+                CareerGraph uses CognoDB and Cypher to turn connected career data into
+                multi-hop paths and recommendations. The hosted application includes
+                graph visualization, validation, API error handling, and responsive UI.
+              </p>
+              <div class="chip-list" aria-label="CareerGraph technologies">
+                <span>Python</span><span>Flask</span><span>CognoDB</span><span>Cypher</span><span>JavaScript</span>
+              </div>
+            </div>
+            <div class="home-feature-actions">
+              <a class="btn btn-primary mono" href="https://careergraph-ehpd.onrender.com" target="_blank" rel="noopener noreferrer">LIVE DEMO</a>
+              <a class="btn btn-secondary mono" href="https://youtu.be/HYSheIQ38fI" target="_blank" rel="noopener noreferrer">WATCH VIDEO</a>
+            </div>
+          </article>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-wrap">
-        <p>© <span id="year"></span> <span data-bind="name">YOUR_NAME</span></p>
+        <p>© <span id="year"></span> <span data-bind="name">Sydrick B. Parra</span></p>
         <p class="mono">Built with JavaScript, HTML & CSS.</p>
         <p class="mono">> keep learning. keep building.</p>
       </div>
