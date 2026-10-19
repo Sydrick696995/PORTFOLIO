@@ -220,6 +220,20 @@ const PORTFOLIO_DATA = {
   ],
   certificates: [
     {
+      title: "Civil Service Examination — Professional Level",
+      issuer: "Civil Service Commission (CSC)",
+      date: "August 9, 2026",
+      image: "./assets/Examinee_305185_page-0001.jpg",
+      pdf: "./assets/Examinee_305185.pdf",
+      featured: true,
+      status: "PASSED",
+      rating: "81.62",
+      mode: "Pen and Paper Test",
+      region: "Region 5",
+      description:
+        "Civil Service Examination result notice for the Professional Level. The document confirms a passed result; the 81.62 rating is included from the supplied result details and is not printed on the image preview.",
+    },
+    {
       title: "GitHub Foundations",
       issuer: "DataCamp",
       date: "Aug 22, 2026",
@@ -526,36 +540,76 @@ function renderCertificates() {
   // Each credential stays independently visible and verifiable. DataCamp
   // certificates include their original PDFs in /assets so visitors can open
   // the issued document instead of relying only on a thumbnail.
-  PORTFOLIO_DATA.certificates.forEach((cert, index) => {
-    const card = document.createElement("article");
-    card.className = "certificate-card reveal";
-    card.innerHTML = `
-      <button class="certificate-image certificate-view-button" type="button"
-        data-certificate-index="${index}" aria-label="Open ${escapeHTML(cert.title)} certificate">
-        <img src="${escapeHTML(cert.image)}" alt="${escapeHTML(cert.title)} certificate" loading="lazy" />
-        <span class="certificate-view-label mono">VIEW</span>
-      </button>
-      <div class="certificate-content">
-        <div class="certificate-kicker mono">${escapeHTML(cert.issuer)}</div>
-        <h3 class="certificate-title">${escapeHTML(cert.title)}</h3>
-        <p class="certificate-meta mono">${escapeHTML(cert.date)}${cert.duration ? ` • ${escapeHTML(cert.duration)}` : ""}</p>
-        <p class="certificate-desc">${escapeHTML(cert.description)}</p>
-        <div class="certificate-actions">
-          <button class="btn btn-secondary mono certificate-open-button" type="button" data-certificate-index="${index}">VIEW CERTIFICATE</button>
-          ${cert.pdf ? `<a class="btn btn-secondary mono inline-link" href="${escapeHTML(cert.pdf)}" target="_blank" rel="noopener noreferrer">OPEN PDF</a>` : ""}
-          ${cert.verificationUrl ? `<a class="btn btn-secondary mono inline-link" href="${escapeHTML(cert.verificationUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Verify ${escapeHTML(cert.title)} on DataCamp">VERIFY</a>` : ""}
-          ${cert.link ? `<a class="btn btn-secondary mono inline-link" href="${escapeHTML(cert.link)}" target="_blank" rel="noopener noreferrer">VERIFY</a>` : ""}
+  PORTFOLIO_DATA.certificates
+    .filter((cert) => !cert.featured)
+    .forEach((cert) => {
+      const index = PORTFOLIO_DATA.certificates.indexOf(cert);
+      const card = document.createElement("article");
+      card.className = "certificate-card reveal";
+      card.innerHTML = `
+        <button class="certificate-image certificate-view-button" type="button"
+          data-certificate-index="${index}" aria-label="Open ${escapeHTML(cert.title)} certificate">
+          <img src="${escapeHTML(cert.image)}" alt="${escapeHTML(cert.title)} certificate" loading="lazy" />
+          <span class="certificate-view-label mono">VIEW</span>
+        </button>
+        <div class="certificate-content">
+          <div class="certificate-kicker mono">${escapeHTML(cert.issuer)}</div>
+          <h3 class="certificate-title">${escapeHTML(cert.title)}</h3>
+          <p class="certificate-meta mono">${escapeHTML(cert.date)}${cert.duration ? ` • ${escapeHTML(cert.duration)}` : ""}</p>
+          <p class="certificate-desc">${escapeHTML(cert.description)}</p>
+          <div class="certificate-actions">
+            <button class="btn btn-secondary mono certificate-open-button" type="button" data-certificate-index="${index}">VIEW CERTIFICATE</button>
+            ${cert.pdf ? `<a class="btn btn-secondary mono inline-link" href="${escapeHTML(cert.pdf)}" target="_blank" rel="noopener noreferrer">OPEN PDF</a>` : ""}
+            ${cert.verificationUrl ? `<a class="btn btn-secondary mono inline-link" href="${escapeHTML(cert.verificationUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Verify ${escapeHTML(cert.title)} on DataCamp">VERIFY</a>` : ""}
+            ${cert.link ? `<a class="btn btn-secondary mono inline-link" href="${escapeHTML(cert.link)}" target="_blank" rel="noopener noreferrer">VERIFY</a>` : ""}
+          </div>
         </div>
-      </div>
-    `;
-    container.appendChild(card);
-  });
+      `;
+      container.appendChild(card);
+    });
 
   container.querySelectorAll("[data-certificate-index]").forEach((button) => {
     button.addEventListener("click", () => {
       const certificate = PORTFOLIO_DATA.certificates[Number(button.dataset.certificateIndex)];
       openCertificateViewer(certificate);
     });
+  });
+}
+
+function renderFeaturedCertificate() {
+  const container = document.getElementById("featuredCertificate");
+  const cert = PORTFOLIO_DATA.certificates.find((item) => item.featured);
+  if (!container || !cert) return;
+
+  const index = PORTFOLIO_DATA.certificates.indexOf(cert);
+  container.innerHTML = `
+    <article class="featured-certificate-card reveal is-visible">
+      <div class="featured-certificate-copy">
+        <p class="mono certificate-kicker">FEATURED ACHIEVEMENT · ${escapeHTML(cert.issuer)}</p>
+        <h3>${escapeHTML(cert.title)}</h3>
+        <p>${escapeHTML(cert.description)}</p>
+        <div class="featured-certificate-stats" aria-label="Civil Service Examination details">
+          <div><span class="mono">STATUS</span><strong class="result-status">${escapeHTML(cert.status)}</strong></div>
+          <div><span class="mono">GENERAL RATING</span><strong>${escapeHTML(cert.rating)}</strong></div>
+          <div><span class="mono">EXAMINATION DATE</span><strong>${escapeHTML(cert.date)}</strong></div>
+          <div><span class="mono">MODE</span><strong>${escapeHTML(cert.mode)}</strong></div>
+          <div><span class="mono">REGION</span><strong>${escapeHTML(cert.region)}</strong></div>
+        </div>
+        <div class="certificate-actions">
+          <button class="btn btn-primary mono certificate-open-button" type="button" data-certificate-index="${index}">VIEW RESULT</button>
+          <a class="btn btn-secondary mono inline-link" href="${escapeHTML(cert.pdf)}" target="_blank" rel="noopener noreferrer">OPEN PDF</a>
+        </div>
+      </div>
+      <button class="featured-certificate-preview certificate-view-button" type="button"
+        data-certificate-index="${index}" aria-label="Open Civil Service Examination result preview">
+        <img src="${escapeHTML(cert.image)}" alt="Civil Service Commission result notice showing a passed Professional Level examination" />
+        <span class="certificate-view-label mono">VIEW RESULT</span>
+      </button>
+    </article>
+  `;
+
+  container.querySelectorAll("[data-certificate-index]").forEach((button) => {
+    button.addEventListener("click", () => openCertificateViewer(cert));
   });
 }
 
@@ -601,6 +655,10 @@ function initCertificateViewer() {
       if (typeof dialog.close === "function") dialog.close();
       else dialog.removeAttribute("open");
     }
+  });
+
+  dialog.addEventListener("cancel", () => {
+    if (typeof dialog.close !== "function") dialog.removeAttribute("open");
   });
 }
 
@@ -889,6 +947,7 @@ function initPortfolio() {
   renderProjects();
   renderEducation();
   renderJourney();
+  renderFeaturedCertificate();
   renderCertificates();
   initTypewriter();
   initReveal();

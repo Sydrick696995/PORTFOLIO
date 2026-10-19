@@ -21,7 +21,7 @@ The portfolio is intentionally built with **vanilla HTML, CSS, and JavaScript**.
 
 ## Certifications
 
-The Education page includes individual certificate cards with a lightweight viewer. Current certifications include five DataCamp credentials in Git/GitHub, plus BYCIT, JPCS, and Cisco Networking Academy credentials. The original DataCamp certificate PDFs are preserved in `assets/` for verification.
+The Education page features the Civil Service Commission Professional Level examination result first, with its passed status, supplied general rating (81.62), date, mode, and region. The official result image and PDF are preserved in `assets/`, while the examinee ID is not repeated in the public summary card. The remaining certificate cards use a lightweight keyboard-accessible viewer. Current certifications include five DataCamp credentials in Git/GitHub, plus BYCIT, JPCS, and Cisco Networking Academy credentials. The original DataCamp certificate PDFs are preserved in `assets/` for verification.
 
 ## Featured project: CareerGraph
 
@@ -197,3 +197,5 @@ Professional profile:
 
 ### Certificate verification
 The GitHub Foundations certificate includes its official DataCamp Statement of Accomplishment link in the certificate card and viewer. Other certificates are only given verification links when an official URL is available.
+
+The Civil Service Examination is presented as an examination result notice, not as a separate certificate. Its preview is available through the result viewer and its original PDF link; the source image visibly confirms the passed status and examination details but does not print the general rating.

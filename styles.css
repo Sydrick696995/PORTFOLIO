@@ -641,6 +641,93 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
+.featured-certificate {
+  margin: 1.5rem 0 2.5rem;
+}
+
+.featured-certificate-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(180px, 0.6fr);
+  gap: 1.25rem;
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  padding: clamp(1rem, 3vw, 1.5rem);
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.featured-certificate-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0.3rem;
+  background: var(--accent);
+}
+
+.featured-certificate-copy h3 {
+  margin: 0.35rem 0 0.55rem;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+.featured-certificate-copy > p:not(.certificate-kicker) {
+  color: var(--muted);
+  max-width: 65ch;
+}
+
+.featured-certificate-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.2rem 0;
+}
+
+.featured-certificate-stats div {
+  border-top: 1px solid var(--line);
+  padding-top: 0.55rem;
+}
+
+.featured-certificate-stats span,
+.featured-certificate-stats strong {
+  display: block;
+}
+
+.featured-certificate-stats span {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.featured-certificate-stats strong {
+  margin-top: 0.2rem;
+}
+
+.featured-certificate-stats .result-status {
+  color: var(--accent);
+}
+
+.featured-certificate-preview {
+  align-self: center;
+  position: relative;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.featured-certificate-preview img {
+  display: block;
+  width: 100%;
+  max-height: 290px;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.certificate-collection-title {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
 .certificate-card {
   border: 1px solid var(--line);
   background: var(--surface);
@@ -689,6 +776,14 @@ a {
 }
 
 @media (max-width: 600px) {
+  .featured-certificate-card {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-certificate-stats {
+    grid-template-columns: 1fr;
+  }
+
   .certificate-card {
     grid-template-columns: 1fr;
   }
