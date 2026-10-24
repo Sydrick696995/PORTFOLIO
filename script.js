@@ -15,24 +15,39 @@ const PORTFOLIO_DATA = {
   ],
   skills: [
     {
-      title: "WEB DEVELOPMENT",
-      tags: ["JavaScript", "HTML", "CSS", "Responsive UI", "Accessibility"],
+      number: "01",
+      icon: "terminal",
+      title: "BACKEND & PROGRAMMING",
+      description: "Building practical application logic, APIs, and database-backed workflows.",
+      tags: ["Python", "Flask", "JavaScript (ES6+)", "RESTful APIs", "Cypher Query"],
     },
     {
-      title: "PYTHON & BACKEND",
-      tags: ["Python", "Flask", "REST APIs", "Scripting", "API Integration"],
-    },
-    {
+      number: "02",
+      icon: "database",
       title: "DATABASES & DATA",
-      tags: ["SQL", "CognoDB", "Cypher", "Database Design", "Pandas", "NumPy"],
+      description: "Modeling connected data and working with graph-based application logic.",
+      tags: ["CognoDB", "Graph Databases", "Data Modeling", "Query Optimization"],
     },
     {
-      title: "AI / MACHINE LEARNING",
-      tags: ["YOLOv8", "Pose Estimation", "scikit-learn", "Data Testing", "Model Evaluation"],
+      number: "03",
+      icon: "app-windows",
+      title: "FRONTEND & WEB",
+      description: "Creating responsive, semantic interfaces with clear user experiences.",
+      tags: ["HTML5 / Semantic", "CSS3 / Responsive CSS", "Modern JavaScript", "Responsive UI/UX"],
     },
     {
-      title: "TOOLS & ENGINEERING",
-      tags: ["Git", "GitHub", "Streamlit", "Testing", "Debugging", "Documentation"],
+      number: "04",
+      icon: "cpu",
+      title: "AI & MACHINE LEARNING",
+      description: "Applying computer-vision workflows and testing model behavior in projects.",
+      tags: ["YOLOv8", "Pose Estimation", "Computer Vision", "Model Evaluation"],
+    },
+    {
+      number: "05",
+      icon: "tools",
+      title: "TOOLS & METHODOLOGIES",
+      description: "Supporting reliable delivery through version control, testing, and troubleshooting.",
+      tags: ["Git & GitHub", "System Testing & Debugging", "Hardware Setup", "Technical Support", "Linux / CLI"],
     },
   ],
   optionalSkills: [],
@@ -206,6 +221,12 @@ const PORTFOLIO_DATA = {
         "Enhanced the APAW system by improving UI, map-based navigation, and mobile responsiveness. Developed weather monitoring, data visualization, and visitor logging features. Performed system testing, debugging, and AI research while assisting with technical support and hardware setup.",
     },
     {
+      title: "Student Assistant — Camarines Sur Polytechnic Colleges",
+      period: "Jun 2024 — Dec 2025",
+      summary:
+        "Supported day-to-day school operations while balancing academic responsibilities. Developed organization, time management, communication, teamwork, and responsibility through assisting with assigned tasks and coordinating with others.",
+    },
+    {
       title: "C.A.L.I. — Real-Time Calisthenics Form Checker",
       period: "2025 — 2026",
       summary:
@@ -344,17 +365,26 @@ function renderAbout() {
 function renderSkills() {
   const skillsGrid = document.getElementById("skillsGrid");
   const optionalSkills = document.getElementById("optionalSkills");
-  if (!skillsGrid || !optionalSkills) return;
+  if (!skillsGrid) return;
 
   PORTFOLIO_DATA.skills.forEach((skill) => {
     const card = document.createElement("article");
     card.className = "skill-card reveal";
     card.innerHTML = `
-      <h3 class="skill-title mono">[ ${skill.title} ]</h3>
-      <p class="skill-tags">${skill.tags.join(" • ")}</p>
+      <div class="skill-card-heading">
+        <span class="skill-icon pixel-icon-${escapeHTML(skill.icon || "code")}" aria-hidden="true"></span>
+        <span class="skill-number mono">${escapeHTML(skill.number || "")}</span>
+      </div>
+      <h3 class="skill-title mono">${escapeHTML(skill.title)}</h3>
+      <p class="skill-description">${escapeHTML(skill.description || "")}</p>
+      <ul class="skill-tags" aria-label="${escapeHTML(skill.title)} technologies">
+        ${skill.tags.map((tag) => `<li>${escapeHTML(tag)}</li>`).join("")}
+      </ul>
     `;
     skillsGrid.appendChild(card);
   });
+
+  if (!optionalSkills) return;
 
   PORTFOLIO_DATA.optionalSkills.forEach((item) => {
     const li = document.createElement("li");
@@ -369,21 +399,39 @@ function escapeHTML(value) {
   return div.innerHTML;
 }
 
+function pixelIcon(name) {
+  const safeName = String(name || "code").replace(/[^a-z-]/g, "");
+  return `<span class="action-icon pixel-icon-${safeName}" aria-hidden="true"></span>`;
+}
+
+function iconForLabel(label) {
+  const normalized = String(label).toUpperCase();
+  if (normalized.includes("GITHUB")) return "github";
+  if (normalized.includes("VIDEO")) return "video";
+  if (normalized.includes("DEMO")) return "play";
+  if (normalized.includes("PDF") || normalized.includes("RESUME")) return "download";
+  if (normalized.includes("VERIFY")) return "external-link";
+  if (normalized.includes("CASE")) return "code";
+  if (normalized.includes("SEND")) return "send";
+  return "external-link";
+}
+
 function linkButton(link, extraClass = "btn btn-secondary mono") {
+  const icon = pixelIcon(iconForLabel(link.label));
   return link.internal
-    ? `<a class="${extraClass}" href="${link.href}">${link.label}</a>`
-    : `<a class="${extraClass}" href="${link.href}" target="_blank" rel="noopener noreferrer">${link.label}</a>`;
+    ? `<a class="${extraClass}" href="${link.href}">${icon}${link.label}</a>`
+    : `<a class="${extraClass}" href="${link.href}" target="_blank" rel="noopener noreferrer">${icon}${link.label}</a>`;
 }
 
 function projectActionOrNote(url, label, note) {
   // Treat placeholder links such as "#" as unavailable instead of sending
   // visitors back to the top of the current page.
   if (url && url !== "#") {
-    return `<a class="btn btn-secondary mono" href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+    return `<a class="btn btn-secondary mono" href="${url}" target="_blank" rel="noopener noreferrer">${pixelIcon(iconForLabel(label))}${label}</a>`;
   }
 
   const safeNote = note || `${label} unavailable`;
-  return `<span class="btn btn-disabled mono" aria-disabled="true" title="${safeNote}">${label} UNAVAILABLE</span>`;
+  return `<span class="btn btn-disabled mono" aria-disabled="true" title="${safeNote}">${pixelIcon(iconForLabel(label))}${label} UNAVAILABLE</span>`;
 }
 
 function renderProjects() {
@@ -437,7 +485,7 @@ function renderProjects() {
         <div class="empty-state">
           <p class="mono">NO MATCHING PROJECTS</p>
           <p>Try another keyword or clear the filter.</p>
-          <button class="btn btn-secondary mono" type="button" data-clear-projects>CLEAR FILTER</button>
+          <button class="btn btn-secondary mono" type="button" data-clear-projects>${pixelIcon("close")}CLEAR FILTER</button>
         </div>`;
       projectsGrid.querySelector("[data-clear-projects]")?.addEventListener("click", () => {
         const search = document.getElementById("projectSearch");
@@ -463,7 +511,7 @@ function renderProjects() {
         <p class="project-desc">${escapeHTML(project.description)}</p>
         <div class="project-tags">${(project.technologies || []).slice(0, 5).map((tech) => `<span>${escapeHTML(tech)}</span>`).join("")}</div>
         <details class="project-details">
-          <summary class="mono">VIEW DETAILS</summary>
+          <summary class="mono"><span class="summary-icon" aria-hidden="true"></span>VIEW DETAILS</summary>
           <div class="project-detail-body">
             <p class="meta-label mono">Problem Solved</p>
             <p>${escapeHTML(project.problemSolved)}</p>

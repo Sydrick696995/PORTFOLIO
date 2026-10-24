@@ -21,11 +21,9 @@
         <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
           <a href="Home.html" class="mono">HOME</a>
           <a href="About.html" class="mono">ABOUT</a>
-          <a href="Skills.html" class="mono">SKILLS</a>
           <a href="Projects.html" class="mono">PROJECTS</a>
           <a href="Education.html" class="mono">EDUCATION</a>
           <a href="Journey.html" class="mono">JOURNEY</a>
-          <a href="Github.html" class="mono">GITHUB</a>
           <a href="Contact.html" class="mono">CONTACT</a>
         </nav>
         <div class="header-controls">
@@ -41,16 +39,26 @@
     <main id="main-content">
       <!-- SECTION FILE: Contact -->
       <!-- Troubleshooting: the form uses a placeholder submit handler in script.js; connect to your real backend/email service -->
-      <section class="section" id="contact">
+      <section class="section contact-page" id="contact">
         <div class="container">
-          <h2 class="section-title mono reveal">LET'S TALK.</h2>
-          <p class="section-intro reveal">
+          <div class="contact-floating-icons" aria-hidden="true">
+            <span class="floating-icon floating-icon-mail"></span>
+            <span class="floating-icon floating-icon-terminal"></span>
+            <span class="floating-icon floating-icon-app"></span>
+            <span class="floating-icon floating-icon-database"></span>
+            <span class="floating-icon floating-icon-code"></span>
+            <span class="floating-icon floating-icon-tools"></span>
+            <span class="floating-icon floating-icon-play"></span>
+            <span class="floating-icon floating-icon-download"></span>
+          </div>
+          <h2 class="section-title contact-title mono reveal">LET'S TALK.</h2>
+          <p class="section-intro contact-intro reveal">
             Have an opportunity, project, or question? I would love to hear
             from you.
           </p>
           <div class="contact-layout">
             <div class="contact-info reveal">
-              <a class="btn btn-primary mono" href="mailto:sydparra06@gmail.com">EMAIL ME</a>
+              <a class="btn btn-primary mono" href="mailto:sydparra06@gmail.com"><span class="action-icon pixel-icon-mail" aria-hidden="true"></span>EMAIL ME</a>
               <dl>
                 <dt class="mono">Email</dt>
                 <dd><a href="mailto:sydparra06@gmail.com">sydparra06@gmail.com</a></dd>
@@ -60,7 +68,7 @@
                 <dd><a href="https://www.linkedin.com/in/sydrick-parra/" target="_blank" rel="noopener noreferrer">linkedin.com/in/sydrick-parra</a></dd>
               </dl>
             </div>
-            <form class="contact-form reveal" id="contactForm" novalidate action="https://formspree.io/f/mdendnae" method="POST">
+            <form class="contact-form contact-form-cozy reveal" id="contactForm" novalidate action="https://formspree.io/f/mdendnae" method="POST">
               <p class="mono form-note">Messages sent via Formspree — you'll receive them at sydparra06@gmail.com</p>
               <label for="name">Name</label>
               <input id="name" name="name" type="text" autocomplete="name" required />
@@ -71,7 +79,7 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="5" required></textarea>
 
-              <button class="btn btn-primary mono" type="submit">SEND MESSAGE</button>
+              <button class="btn btn-primary mono" type="submit"><span class="action-icon pixel-icon-send" aria-hidden="true"></span>SEND MESSAGE</button>
               <p id="formStatus" class="mono form-status" role="status" aria-live="polite"></p>
             </form>
           </div>

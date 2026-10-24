@@ -150,6 +150,13 @@ The site includes:
 
 Accessibility should be rechecked after future content or layout changes.
 
+## Pixelarticons
+
+The retro interface uses a small locally stored subset of SVG icons from the
+Pixelarticons open-source collection. The files are kept in
+`assets/icons/pixelarticons/` and rendered with CSS-controlled color masks so
+they follow the active portfolio theme without requiring remote icon requests.
+
 ## Screenshots
 
 Add final deployment screenshots under:
